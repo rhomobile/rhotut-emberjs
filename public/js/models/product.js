@@ -5,6 +5,8 @@ App.Product = DS.Model.extend({
   isavailable: DS.attr('boolean')
 });
 
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
+
 App.Product.FIXTURES = [
  {
   id: 1,
