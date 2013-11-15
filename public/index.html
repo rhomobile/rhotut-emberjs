@@ -27,7 +27,9 @@
       {{#link-to 'productedit' this}}
         <span class="badge pull-left">{{qty}}</span>
         {{name}} - {{brand}}
-      {{/link-to}}  
+      {{/link-to}}
+      <button {{action "up" this}} class="button btn-sm pull-right"><i class="icon icon-arrow-up"></i></button>
+        <button {{action "down" this}} class="button btn-sm pull-right"><i class="icon icon-arrow-down"></i></button>  
       </li>
     
     {{/each}}
