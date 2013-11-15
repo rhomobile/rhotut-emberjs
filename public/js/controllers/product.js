@@ -43,3 +43,15 @@ App.ProducteditController = Ember.ObjectController.extend({
     }
   }
 });
+
+
+App.ProductdeleteController = Ember.ObjectController.extend({
+  actions: {
+    delete: function () {
+      var product = this.get('model');
+      product.deleteRecord();
+      product.save();
+      this.transitionTo('products');
+    }
+  }
+});

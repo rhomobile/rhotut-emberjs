@@ -5,6 +5,7 @@ App.Router.map(function() {
   this.resource('products', {path: '/'}, function(){
     this.resource('productnew');
     this.resource('productedit', { path: ':product_id' });
+    this.resource('productdelete', { path: '/:product_id/delete' });
   
   });
 });

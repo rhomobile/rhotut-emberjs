@@ -23,6 +23,7 @@
     {{#each model}}
 
       <li class="list-group-item">
+      {{#link-to 'productdelete' this}}<span id="reportdelete" class="button btn-sm btn-danger pull-right" ><i class="icon icon-trash"></i></span>{{/link-to}}
       {{#link-to 'productedit' this}}
         <span class="badge pull-left">{{qty}}</span>
         {{name}} - {{brand}}
@@ -80,6 +81,21 @@
   <h2>Edit {{name}}</h2>
   {{partial "productForm"}}
 </div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="productdelete">
+<div class="container">
+  <h2>
+  Are you sure you want to delete {{brand}} - {{name}}?</h2>
+  <div >
+    <button id="delete" class="btn  btn-success" {{action "delete" on="click"}} type="button">Yes</button>
+    {{#link-to 'products'}}<button id="cancel" class="btn btn-default ">No</button>{{/link-to}}
+    
+  </div>          
+ 
+</div>
+
 </script>
 
   <script src="js/libs/jquery-1.9.1.min.js" type="text/javascript"></script>
