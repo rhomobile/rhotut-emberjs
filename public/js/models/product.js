@@ -5,7 +5,15 @@ App.Product = DS.Model.extend({
   isavailable: DS.attr('boolean')
 });
 
-App.ApplicationAdapter = DS.FixtureAdapter.extend();
+Rho.ORM.addModel(function(model){
+  model.modelName("Product");
+  model.property("name","string");
+  
+});
+
+App.ProductAdapter = DS.RhomAdapter.extend({
+  model: "Product"
+});
 
 App.Product.FIXTURES = [
  {
