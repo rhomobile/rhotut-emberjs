@@ -5,3 +5,9 @@ App.ProductsIndexRoute = Ember.Route.extend({
   
 });
 
+App.ProductsEditRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.findBy('id',params.product_id);
+    
+  }
+});

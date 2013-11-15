@@ -28,3 +28,18 @@ App.ProductnewController = Ember.ObjectController.extend({
     }
   }
 });
+
+App.ProducteditController = Ember.ObjectController.extend({
+  actions: {
+    save: function () {
+
+      var isavailable = $('#isavailable').is(':checked');
+      
+      this.set('isavailable',isavailable);
+      
+      this.get('model').save();
+
+      this.transitionTo('products');
+    }
+  }
+});

@@ -23,9 +23,10 @@
     {{#each model}}
 
       <li class="list-group-item">
+      {{#link-to 'productedit' this}}
         <span class="badge pull-left">{{qty}}</span>
         {{name}} - {{brand}}
-        
+      {{/link-to}}  
       </li>
     
     {{/each}}
@@ -72,6 +73,13 @@
   {{partial "productForm"}}
 </div>
 
+</script>
+
+<script type="text/x-handlebars" id="productedit">
+<div class="container">
+  <h2>Edit {{name}}</h2>
+  {{partial "productForm"}}
+</div>
 </script>
 
   <script src="js/libs/jquery-1.9.1.min.js" type="text/javascript"></script>
